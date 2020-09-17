@@ -6,4 +6,12 @@ module.exports = function (app) {
     app.route("/").get(todoList.index);
 
     app.route("/customers").get(todoList.customers);
+
+    app.route("/customers/:Id_user").get(todoList.findCustomers);
+
+    app.route("/customers").post(todoList.createCustomers);
+
+    app.route("/updateCustomers").post(todoList.updateCustomers);
+
+    app.route("/deleteCustomers").post(todoList.deleteCustomers);
 };
